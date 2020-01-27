@@ -1,0 +1,200 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="home.master.vb" Inherits="victoriaCRM.home" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Victoria CRM</title>
+    <!-- Tell the browser to be responsive to screen width -->
+  <!--<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap 3.3.7 -->
+  <link href="Content/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link href="Content/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Ionicons -->
+  <link href="admin-lte/css/Ionicons/css/ionicons.min.css" rel="stylesheet" />
+
+  <!-- Theme style -->
+  <link href="admin-lte/css/AdminLTE.min.css" rel="stylesheet" />
+
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link href="admin-lte/css/skins/_all-skins.min.css" rel="stylesheet" />
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+
+
+    <body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="../../menu.aspx" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>V</b>CRM</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Vicky</b>CRM</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="admin-lte/img/user2-160x160.jpg" class="user-image" alt="User Image" />
+              <span class="hidden-xs"><%=Session("usuario") %></span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="admin-lte/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+                <p>
+                   <%--<%= session("usuario") %>--%>
+                  <small>Cargo del Usuario</small>
+                </p>
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="perfil/cambiarclave.aspx" class="btn btn-default btn-flat">Cambiar Clave</a>
+                </div>
+                <div class="pull-right">
+                  <a href="login.aspx" class="btn btn-default btn-flat">Salir</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =============================================== -->
+
+  <!-- Left side column. contains the sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="admin-lte/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
+        </div>
+        <div class="pull-left info">
+          <p><%= session("usuario") %></p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">Menú</li>       
+            <li class='treeview active'>
+             <%  Select Case Session("tipo")
+                     Case "D"
+                         Response.Write("<a href='#'><i class='fa fa-edit'></i><span>Clientes</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a> <ul class='treeview-menu'> <li> <a href='catClientes.aspx'><i class='fa fa-circle-o'></i> Clientes</a></li> <li><a href='transacciones.aspx'><i class='fa fa-circle-o'></i>Transacciones</a></li> </ul>")
+                     Case "A"
+                         Response.Write("<a href='#'><i class='fa fa-edit'></i><span>Catalogos</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a> <ul class='treeview-menu'> <li><a href='catMarcas.aspx'><i class='fa fa-circle-o'></i> Marcas</a></li> <li><a href='catPlanFijo.aspx'><i class='fa fa-circle-o'></i> Plan Fijo</a></li> <li><a href='catProductos.aspx'><i class='fa fa-circle-o'></i> Productos</a></li><li><a href='catPlanes.aspx'><i class='fa fa-circle-o'></i> Planes</a></li><li><a href='catChips.aspx'><i class='fa fa-circle-o'></i> Chips</a></li><li><a href='catUsuarios.aspx'><i class='fa fa-circle-o'></i> Usuarios</a></li> <li><a href='catCiclos.aspx'><i class='fa fa-circle-o'></i> Ciclos</a></li> <li><a href='catestadosActivador.aspx'><i class='fa fa-circle-o'></i> Estados</a></li>  <li><a href='catFpago.aspx'><i class='fa fa-circle-o'></i> Formas de Pago</a></li><li><a href='catBancos.aspx'><i class='fa fa-circle-o'></i> Entidades Financieras</a></li> <li> <a href='catCiudad.aspx'><i class='fa fa-circle-o'></i> Ciudades</a></li><li> <a href='catplanesscore.aspx'><i class='fa fa-circle-o'></i> Planes - Score</a></li> <li><a href='confwebmail.aspx'><i class='fa fa-circle-o'></i> Configuración de Email</a></li><li><a href='confparametros.aspx'><i class='fa fa-circle-o'></i> Configuración Parametros</a></li><li><a href='confpardoc.aspx'><i class='fa fa-circle-o'></i> Conf. Parametros Documentos</a></li></ul>")
+                     Case "L"
+                         Response.Write("<a href='#'><i class='fa fa-pie-chart'></i><span>Ingreso de Buro</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a><ul class='treeview-menu'><li><a href='score_actualizacion.aspx'><i class='fa fa-circle-o'></i> Score</a></li><li><a href='cargaDocumentos.aspx'><i class='fa fa-circle-o'></i> Contratos</a></li></ul>")
+                     Case "T"
+                         Response.Write("<a href='#'><i class='fa fa-files-o'></i><span>Inventario</span><span class='pull-right-container'><span class='label label-danger pull-right'> Equipos</span></span></a><ul class='treeview-menu'><li><a href='catEquipos.aspx'><i class='fa fa-circle-o'></i> Ingreso</a></li><li><a href='cargaEquipos.aspx'><i class='fa fa-circle-o'></i> Importar Excel</a></li><li><a href='rptEquipos.aspx'><i class='fa fa-circle-o'></i> Reporte</a></li></ul></li>")
+                     Case "S"
+                         Response.Write("<a href='#'><i class='fa fa-pie-chart'></i><span>Transacciones</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a><ul class='treeview-menu'><li><a href='transacciones.aspx'><i class='fa fa-circle-o'></i>Transacciones</a></li> <li><a href='transaccionesInternet.aspx'><i class='fa fa-circle-o'></i>Trans.Int/Telf</a></li> <li><a href='lstTransacciones.aspx'><i class='fa fa-circle-o'></i> Listado Transacciones</a></li><li><a href='lstClientes.aspx'><i class='fa fa-circle-o'></i> Listado Clientes</a></li></ul>  <a href='#'><i class='fa fa-files-o'></i><span>Ventas</span><span class='pull-right-container'><span class='label label-danger pull-right'> Reportes</span></span></a> <ul class='treeview-menu'><li><a href='rep_inv_telefonos.aspx'><i class='fa fa-circle-o'></i> Telefonos</a></li> <li><a href='rep_inv_moviles'><i class='fa fa-circle-o'></i> Móviles</a></li><li><a href='rep_inv_fijos.aspx'><i class='fa fa-circle-o'></i> Fijos</a></li><li><a href='rep_inv_internet.aspx'><i class='fa fa-circle-o'></i> Internet</a></li> <li><a href='rep_inv_tv.aspx'><i class='fa fa-circle-o'></i> TV</a></li></ul>")
+                     Case "M"
+                         Response.Write("<a href='#'><i class='fa fa-files-o'></i><span>Activadores</span><span class='pull-right-container'><span class='label label-danger pull-right'> Activador Movil</span></span></a><ul class='treeview-menu'><li><a href='activador_movil.aspx'><i class='fa fa-circle-o'></i> Ingreso</a></li><li><a href='#'><i class='fa fa-circle-o'></i> Consulta</a></li></ul></li>")
+                     Case "F"
+                         Response.Write("<a href='#'><i class='fa fa-files-o'></i><span>Activadores</span><span class='pull-right-container'><span class='label label-danger pull-right'> Activador Fijo</span></span></a><ul class='treeview-menu'><li><a href='activador_fijo.aspx'><i class='fa fa-circle-o'></i> Ingreso</a></li><li><a href='#'><i class='fa fa-circle-o'></i> Consulta</a></li></ul></li>")
+                     Case "O"
+                         Response.Write("<a href='#'><i class='fa fa-edit'></i><span>Clientes</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a> <ul class='treeview-menu'> <li> <a href='catClientes.aspx'><i class='fa fa-circle-o'></i> Clientes</a></li></ul> </li> <li class='treeview'>  <a href='#'><i class='fa fa-edit'></i><span>Catalogos</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a> <ul class='treeview-menu'> <li><a href='catMarcas.aspx'><i class='fa fa-circle-o'></i> Marcas</a></li>  <li><a href='catPlanFijo.aspx'><i class='fa fa-circle-o'></i> Plan Fijo</a></li> <li><a href='catProductos.aspx'><i class='fa fa-circle-o'></i> Productos</a></li><li><a href='catPlanes.aspx'><i class='fa fa-circle-o'></i> Planes</a></li><li><a href='catChips.aspx'><i class='fa fa-circle-o'></i> Chips</a></li><li><a href='catUsuarios.aspx'><i class='fa fa-circle-o'></i> Vendedores</a></li><li><a href='catCiclos.aspx'><i class='fa fa-circle-o'></i> Ciclos</a></li><li><a href='catFpago.aspx'><i class='fa fa-circle-o'></i> Formas de Pago</a></li><li><a href='catBancos.aspx'><i class='fa fa-circle-o'></i> Entidades Financieras</a></li> <li> <a href='catCiudad.aspx'><i class='fa fa-circle-o'></i> Ciudades</a></li><li> <a href='catplanesscore.aspx'><i class='fa fa-circle-o'></i> Planes - Score</a></li> <li><a href='confwebmail.aspx'><i class='fa fa-circle-o'></i> Configuración de Email</a></li><li><a href='confparametros.aspx'><i class='fa fa-circle-o'></i> Configuración Parametros</a></li><li><a href='confpardoc.aspx'><i class='fa fa-circle-o'></i> Conf. Parametros Documentos</a></li></ul></li> </li> <li class='treeview'> <a href='#'><i class='fa fa-pie-chart'></i><span>Ingreso de Buro</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a><ul class='treeview-menu'><li><a href='score_actualizacion.aspx'><i class='fa fa-circle-o'></i> Score</a></li><li><a href='cargaDocumentos.aspx'><i class='fa fa-circle-o'></i> Contratos</a></li></ul></li> </li> <li class='treeview'>  <a href='#'><i class='fa fa-files-o'></i><span>Inventario</span><span class='pull-right-container'><span class='label label-danger pull-right'> Equipos</span></span></a><ul class='treeview-menu'><li><a href='catEquipos.aspx'><i class='fa fa-circle-o'></i> Ingreso</a></li><li><a href='cargaEquipos.aspx'><i class='fa fa-circle-o'></i> Importar Excel</a></li><li><a href='rptEquipos.aspx'><i class='fa fa-circle-o'></i> Reporte</a></li></ul></li></li> </li> <li class='treeview'> <a href='#'><i class='fa fa-pie-chart'></i><span>Transacciones</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a><ul class='treeview-menu'><li><a href='transacciones.aspx'><i class='fa fa-circle-o'></i>Transacciones</a></li> <li><a href='transaccionesInternet.aspx'><i class='fa fa-circle-o'></i>Trans.Int/Telf</a></li> <li><a href='lstTransacciones.aspx'><i class='fa fa-circle-o'></i> Listado Transacciones</a></li><li><a href='lstClientes.aspx'><i class='fa fa-circle-o'></i> Listado Clientes</a></li></ul></li>  </li>  <li class='treeview'><a href='#'><i class='fa fa-files-o'></i><span>Subsanar</span><span class='pull-right-container'><i class='fa fa-angle-left pull-right'></i></span></a><ul class='treeview-menu'><li><a href='subsanar.aspx'><i class='fa fa-circle-o'></i> Subsanar</a></li></ul></li></li>  </li> <li class='treeview'>  <a href='#'><i class='fa fa-files-o'></i><span>Activadores</span><span class='pull-right-container'><span class='label label-danger pull-right'> Activador Movil</span></span></a><ul class='treeview-menu'><li><a href='activador_movil.aspx'><i class='fa fa-circle-o'></i> Ingreso</a></li><li><a href='#'><i class='fa fa-circle-o'></i> Consulta</a></li></ul></li></li>  </li> <li class='treeview'>   <a href='#'><i class='fa fa-files-o'></i><span>Activadores</span><span class='pull-right-container'><span class='label label-danger pull-right'> Activador Fijo</span></span></a><ul class='treeview-menu'><li><a href='activador_fijo.aspx'><i class='fa fa-circle-o'></i> Ingreso</a></li><li><a href='#'><i class='fa fa-circle-o'></i> Consulta</a></li></ul>  <a href='#'><i class='fa fa-files-o'></i><span>Ventas</span><span class='pull-right-container'><span class='label label-danger pull-right'> Reportes</span></span></a> <ul class='treeview-menu'><li><a href='rptEquipos.aspx'><i class='fa fa-circle-o'></i> Telefonos</a></li> <li><a href='rep_inv_moviles'><i class='fa fa-circle-o'></i> Móviles</a></li><li><a href='rep_inv_fijos.aspx'><i class='fa fa-circle-o'></i> Fijos</a></li><li><a href='rep_inv_internet.aspx'><i class='fa fa-circle-o'></i> Internet</a></li> <li><a href='rep_inv_tv.aspx'><i class='fa fa-circle-o'></i> TV</a></li></ul>  <a href='#'> <i class='fa fa-files-o'></i>  <span>Legal</span> </a> <ul class='treeview-menu'><li><a href='rep_subsanar.aspx'><i class='fa fa-circle-o'></i> Subsanación</a></li> <li><a href='rep_inv_legalizados.aspx'><i class='fa fa-circle-o'></i> Legalizados</a></li></ul> <a href='rep_inv_activaciones.aspx'> <i class='fa fa-files-o'></i>  <span>Activaciones</span> </a> <ul class='treeview-menu'><li><a href='rep_inv_act_enviados.aspx'><i class='fa fa-circle-o'></i> Enviados</a></li> <li><a href='rep_inv_act_rechazados.aspx'><i class='fa fa-circle-o'></i> Rechazados</a></li></ul>")
+                     Case "B"
+                         Response.Write("<a href='#'><i class='fa fa-files-o'></i><span>Subsanar</span><span class='pull-right-container'><span class='label label-danger pull-right'> Subsanar</span></span></a><ul class='treeview-menu'><li><a href='subsanar.aspx'><i class='fa fa-circle-o'></i> Subsanar</a></li><li><a href='#'><i class='fa fa-circle-o'></i> Reporte</a></li></ul></li>")
+                     Case "G"
+                         Response.Write("<a href='#'><i class='fa fa-files-o'></i><span>Ventas</span><span class='pull-right-container'><span class='label label-danger pull-right'> Reportes</span></span></a> <ul class='treeview-menu'><li><a href='rep_inv_telefonos.aspx'><i class='fa fa-circle-o'></i> Telefonos</a></li> <li><a href='rep_inv_moviles'><i class='fa fa-circle-o'></i> Móviles</a></li><li><a href='rep_inv_fijos.aspx'><i class='fa fa-circle-o'></i> Fijos</a></li><li><a href='rep_inv_internet.aspx'><i class='fa fa-circle-o'></i> Internet</a></li> <li><a href='rep_inv_tv.aspx'><i class='fa fa-circle-o'></i> TV</a></li></ul>  <a href='#'> <i class='fa fa-files-o'></i>  <span>Legal</span> </a> <ul class='treeview-menu'><li><a href='rep_subsanar.aspx'><i class='fa fa-circle-o'></i> Subsanación</a></li> <li><a href='rep_inv_legalizados.aspx'><i class='fa fa-circle-o'></i> Legalizados</a></li></ul> <a href='rep_inv_activaciones.aspx'> <i class='fa fa-files-o'></i>  <span>Activaciones</span> </a> <ul class='treeview-menu'><li><a href='rep_inv_act_enviados.aspx'><i class='fa fa-circle-o'></i> Enviados</a></li> <li><a href='rep_inv_act_rechazados.aspx'><i class='fa fa-circle-o'></i> Rechazados</a></li></ul>")
+                 End Select
+              %>
+            </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-files-o"></i>
+            <span>Carga de Archivos</span>
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right"> Recargas</span>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="cargasArchivo/recargas.aspx"><i class="fa fa-circle-o"></i> Recargas</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Cashback</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Multas</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Otros</a></li>
+          </ul>
+        </li>     
+        <!-- aqui se cortaron las opciones esta en un notepad aqui mismo en el proyecto se llama opciones.txt -->
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- =============================================== -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+      
+        <div>
+                                                                                                                                                                                                                                                                                                                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                
+            </asp:ContentPlaceHolder>
+        </div>
+    
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 1.1.0
+    </div>
+    <strong>Copyright &copy; 2019 <a href="http://www.misoporteinformatico.com">It Support Team</a>.</strong> All rights
+    reserved.
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="Scripts/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="Scripts/bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="Scripts/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="Scripts/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="admin-lte/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="admin-lte/js/demo.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.sidebar-menu').tree()
+  })
+</script>
+</body>
+</html>

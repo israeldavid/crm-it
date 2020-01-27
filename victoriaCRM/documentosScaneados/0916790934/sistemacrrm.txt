@@ -1,0 +1,18 @@
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/27e4f5a661e0da61c96f49d1e/5f7805c1b666f1399e42a282e.js");</script>
+
+cedula
+
+datos completos
+
+documentos ingresados
+
+si esta todo los doc ingresados un boton Enviar a cnt cambia un estado a aprobado de la transaccion
+
+https://mailchi.mp/bc11b94dd4d0/presetsfree
+
+http://www.mediafire.com/file/6ibt2nv3w7ph7mf/Sony_-_Teal-Orange.zip/file
+
+puede el usuario volver a consultar para ingresar una observacion, aqui debe existir un boton que pueda enviar un correo al vendedor con la observacion para que haga un cambio.
+
+si todo esta bien otro boton que solo cambie el estado de la transaccion en aprobado por cnt
+

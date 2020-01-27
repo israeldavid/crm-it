@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{75240692-DE59-44D4-B1F9-7FCA05A0C01C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>victoriaCRM</RootNamespace>
+    <AssemblyName>victoriaCRM</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>victoriaCRM.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>victoriaCRM.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.69.1.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.0.5022.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="activador_fijo.aspx" />
+    <Content Include="activador_movil.aspx" />
+    <Content Include="admin-lte\css\AdminLTE.css" />
+    <Content Include="admin-lte\css\AdminLTE.min.css" />
+    <Content Include="admin-lte\css\alt\AdminLTE-bootstrap-social.css" />
+    <Content Include="admin-lte\css\alt\AdminLTE-bootstrap-social.min.css" />
+    <Content Include="admin-lte\css\alt\AdminLTE-fullcalendar.css" />
+    <Content Include="admin-lte\css\alt\AdminLTE-fullcalendar.min.css" />
+    <Content Include="admin-lte\css\alt\AdminLTE-select2.css" />
+    <Content Include="admin-lte\css\alt\AdminLTE-select2.min.css" />
+    <Content Include="admin-lte\css\alt\AdminLTE-without-plugins.css" />
+    <Content Include="admin-lte\css\alt\AdminLTE-without-plugins.min.css" />
+    <Content Include="admin-lte\css\Ionicons\css\ionicons.css" />
+    <Content Include="admin-lte\css\Ionicons\css\ionicons.min.css" />
+    <Content Include="admin-lte\css\skins\skin-black-light.css" />
+    <Content Include="admin-lte\css\skins\skin-black-light.min.css" />
+    <Content Include="admin-lte\css\skins\skin-black.css" />
+    <Content Include="admin-lte\css\skins\skin-black.min.css" />
+    <Content Include="admin-lte\css\skins\skin-blue-light.css" />
+    <Content Include="admin-lte\css\skins\skin-blue-light.min.css" />
+    <Content Include="admin-lte\css\skins\skin-blue.css" />
+    <Content Include="admin-lte\css\skins\skin-blue.min.css" />
+    <Content Include="admin-lte\css\skins\skin-green-light.css" />
+    <Content Include="admin-lte\css\skins\skin-green-light.min.css" />
+    <Content Include="admin-lte\css\skins\skin-green.css" />
+    <Content Include="admin-lte\css\skins\skin-green.min.css" />
+    <Content Include="admin-lte\css\skins\skin-purple-light.css" />
+    <Content Include="admin-lte\css\skins\skin-purple-light.min.css" />
+    <Content Include="admin-lte\css\skins\skin-purple.css" />
+    <Content Include="admin-lte\css\skins\skin-purple.min.css" />
+    <Content Include="admin-lte\css\skins\skin-red-light.css" />
+    <Content Include="admin-lte\css\skins\skin-red-light.min.css" />
+    <Content Include="admin-lte\css\skins\skin-red.css" />
+    <Content Include="admin-lte\css\skins\skin-red.min.css" />
+    <Content Include="admin-lte\css\skins\skin-yellow-light.css" />
+    <Content Include="admin-lte\css\skins\skin-yellow-light.min.css" />
+    <Content Include="admin-lte\css\skins\skin-yellow.css" />
+    <Content Include="admin-lte\css\skins\skin-yellow.min.css" />
+    <Content Include="admin-lte\css\skins\_all-skins.css" />
+    <Content Include="admin-lte\css\skins\_all-skins.min.css" />
+    <Content Include="admin-lte\img\avatar.png" />
+    <Content Include="admin-lte\img\avatar04.png" />
+    <Content Include="admin-lte\img\avatar2.png" />
+    <Content Include="admin-lte\img\avatar3.png" />
+    <Content Include="admin-lte\img\avatar5.png" />
+    <Content Include="admin-lte\img\boxed-bg.jpg" />
+    <Content Include="admin-lte\img\boxed-bg.png" />
+    <Content Include="admin-lte\img\credit\american-express.png" />
+    <Content Include="admin-lte\img\credit\cirrus.png" />
+    <Content Include="admin-lte\img\credit\mastercard.png" />
+    <Content Include="admin-lte\img\credit\mestro.png" />
+    <Content Include="admin-lte\img\credit\paypal.png" />
+    <Content Include="admin-lte\img\credit\paypal2.png" />
+    <Content Include="admin-lte\img\credit\visa.png" />
+    <Content Include="admin-lte\img\default-50x50.gif" />
+    <Content Include="admin-lte\img\icons.png" />
+    <Content Include="admin-lte\img\photo1.png" />
+    <Content Include="admin-lte\img\photo2.png" />
+    <Content Include="admin-lte\img\photo3.jpg" />
+    <Content Include="admin-lte\img\photo4.jpg" />
+    <Content Include="admin-lte\img\user1-128x128.jpg" />
+    <Content Include="admin-lte\img\user2-160x160.jpg" />
+    <Content Include="admin-lte\img\user3-128x128.jpg" />
+    <Content Include="admin-lte\img\user4-128x128.jpg" />
+    <Content Include="admin-lte\img\user5-128x128.jpg" />
+    <Content Include="admin-lte\img\user6-128x128.jpg" />
+    <Content Include="admin-lte\img\user7-128x128.jpg" />
+    <Content Include="admin-lte\img\user8-128x128.jpg" />
+    <Content Include="admin-lte\js\adminlte.js" />
+    <Content Include="admin-lte\js\adminlte.min.js" />
+    <Content Include="admin-lte\js\demo.js" />
+    <Content Include="admin-lte\js\pages\dashboard.js" />
+    <Content Include="admin-lte\js\pages\dashboard2.js" />
+    <Content Include="cargaDocumentos.aspx" />
+    <Content Include="cargaEquipos.aspx" />
+    <Content Include="cargasArchivo\recargas.aspx" />
+    <Content Include="catBancos.aspx" />
+    <Content Include="catChips.aspx" />
+    <Content Include="catCiclos.aspx" />
+    <Content Include="catCiudad.aspx" />
+    <Content Include="catClientes.aspx" />
+    <Content Include="catEquipos.aspx" />
+    <Content Include="catestadosActivador.aspx" />
+    <Content Include="catFpago.aspx" />
+    <Content Include="catMarcas.aspx" />
+    <Content Include="catPlanes.aspx" />
+    <Content Include="catplanesscore.aspx" />
+    <Content Include="catPlanFijo.aspx" />
+    <Content Include="catProductos.aspx" />
+    <Content Include="catUsuarios.aspx" />
+    <Content Include="confparametros.aspx" />
+    <Content Include="confpardoc.aspx" />
+    <Content Include="confwebmail.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\tether\tether-theme-arrows-dark.css" />
+    <Content Include="Content\tether\tether-theme-arrows-dark.min.css" />
+    <Content Include="Content\tether\tether-theme-arrows.css" />
+    <Content Include="Content\tether\tether-theme-arrows.min.css" />
+    <Content Include="Content\tether\tether-theme-basic.css" />
+    <Content Include="Content\tether\tether-theme-basic.min.css" />
+    <Content Include="Content\tether\tether.css" />
+    <Content Include="Content\tether\tether.min.css" />
+    <Content Include="contratos.aspx" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="admin-lte\css\adminlte.min.css.map" />
+    <Content Include="admin-lte\css\adminlte.css.map" />
+    <Content Include="home.Master" />
+    <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="login.aspx" />
+    <Content Include="lstClientes.aspx" />
+    <Content Include="lstPassword.aspx" />
+    <Content Include="lstTransacciones.aspx" />
+    <Content Include="menu.aspx" />
+    <Content Include="perfil\cambiarclave.aspx" />
+    <Content Include="rep_inv_activaciones.aspx" />
+    <Content Include="rep_inv_act_enviados.aspx" />
+    <Content Include="rep_inv_act_rechazados.aspx" />
+    <Content Include="rep_inv_fijos.aspx" />
+    <Content Include="rep_inv_internet.aspx" />
+    <Content Include="rep_inv_legalizados.aspx" />
+    <Content Include="rep_inv_moviles.aspx" />
+    <Content Include="rep_inv_telefonos.aspx" />
+    <Content Include="rep_inv_tv.aspx" />
+    <Content Include="rep_subsanar.aspx" />
+    <Content Include="rptEquipos.aspx" />
+    <Content Include="score_actualizacion.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\fastclick.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.slimscroll.min.js" />
+    <Content Include="Scripts\tether.js" />
+    <Content Include="Scripts\tether.min.js" />
+    <Content Include="subsanar.aspx" />
+    <Content Include="transacciones.aspx" />
+    <Content Include="transaccionesInternet.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="activador_fijo.aspx.designer.vb">
+      <DependentUpon>activador_fijo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="activador_fijo.aspx.vb">
+      <DependentUpon>activador_fijo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="activador_movil.aspx.designer.vb">
+      <DependentUpon>activador_movil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="activador_movil.aspx.vb">
+      <DependentUpon>activador_movil.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="cargaDocumentos.aspx.designer.vb">
+      <DependentUpon>cargaDocumentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cargaDocumentos.aspx.vb">
+      <DependentUpon>cargaDocumentos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="cargaEquipos.aspx.designer.vb">
+      <DependentUpon>cargaEquipos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cargaEquipos.aspx.vb">
+      <DependentUpon>cargaEquipos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="cargasArchivo\recargas.aspx.designer.vb">
+      <DependentUpon>recargas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cargasArchivo\recargas.aspx.vb">
+      <DependentUpon>recargas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catBancos.aspx.designer.vb">
+      <DependentUpon>catBancos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catBancos.aspx.vb">
+      <DependentUpon>catBancos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catChips.aspx.designer.vb">
+      <DependentUpon>catChips.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catChips.aspx.vb">
+      <DependentUpon>catChips.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catCiclos.aspx.designer.vb">
+      <DependentUpon>catCiclos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catCiclos.aspx.vb">
+      <DependentUpon>catCiclos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catCiudad.aspx.designer.vb">
+      <DependentUpon>catCiudad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catCiudad.aspx.vb">
+      <DependentUpon>catCiudad.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catClientes.aspx.designer.vb">
+      <DependentUpon>catClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catClientes.aspx.vb">
+      <DependentUpon>catClientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catEquipos.aspx.designer.vb">
+      <DependentUpon>catEquipos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catEquipos.aspx.vb">
+      <DependentUpon>catEquipos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catestadosActivador.aspx.designer.vb">
+      <DependentUpon>catestadosActivador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catestadosActivador.aspx.vb">
+      <DependentUpon>catestadosActivador.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catFpago.aspx.designer.vb">
+      <DependentUpon>catFpago.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catFpago.aspx.vb">
+      <DependentUpon>catFpago.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catMarcas.aspx.designer.vb">
+      <DependentUpon>catMarcas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catMarcas.aspx.vb">
+      <DependentUpon>catMarcas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catPlanes.aspx.designer.vb">
+      <DependentUpon>catPlanes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catPlanes.aspx.vb">
+      <DependentUpon>catPlanes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catplanesscore.aspx.designer.vb">
+      <DependentUpon>catplanesscore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catplanesscore.aspx.vb">
+      <DependentUpon>catplanesscore.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catPlanFijo.aspx.designer.vb">
+      <DependentUpon>catPlanFijo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catPlanFijo.aspx.vb">
+      <DependentUpon>catPlanFijo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catProductos.aspx.designer.vb">
+      <DependentUpon>catProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catProductos.aspx.vb">
+      <DependentUpon>catProductos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="catUsuarios.aspx.designer.vb">
+      <DependentUpon>catUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catUsuarios.aspx.vb">
+      <DependentUpon>catUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="confparametros.aspx.designer.vb">
+      <DependentUpon>confparametros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="confparametros.aspx.vb">
+      <DependentUpon>confparametros.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="confpardoc.aspx.designer.vb">
+      <DependentUpon>confpardoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="confpardoc.aspx.vb">
+      <DependentUpon>confpardoc.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="confwebmail.aspx.designer.vb">
+      <DependentUpon>confwebmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="confwebmail.aspx.vb">
+      <DependentUpon>confwebmail.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="contratos.aspx.designer.vb">
+      <DependentUpon>contratos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contratos.aspx.vb">
+      <DependentUpon>contratos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="home.Master.designer.vb">
+      <DependentUpon>home.Master</DependentUpon>
+    </Compile>
+    <Compile Include="home.Master.vb">
+      <DependentUpon>home.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="librerias\libreria.vb" />
+    <Compile Include="login.aspx.designer.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lstClientes.aspx.designer.vb">
+      <DependentUpon>lstClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lstClientes.aspx.vb">
+      <DependentUpon>lstClientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="lstPassword.aspx.designer.vb">
+      <DependentUpon>lstPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lstPassword.aspx.vb">
+      <DependentUpon>lstPassword.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="lstTransacciones.aspx.designer.vb">
+      <DependentUpon>lstTransacciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lstTransacciones.aspx.vb">
+      <DependentUpon>lstTransacciones.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="menu.aspx.designer.vb">
+      <DependentUpon>menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menu.aspx.vb">
+      <DependentUpon>menu.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="perfil\cambiarclave.aspx.designer.vb">
+      <DependentUpon>cambiarclave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfil\cambiarclave.aspx.vb">
+      <DependentUpon>cambiarclave.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rep_inv_activaciones.aspx.designer.vb">
+      <DependentUpon>rep_inv_activaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rep_inv_activaciones.aspx.vb">
+      <DependentUpon>rep_inv_activaciones.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rep_inv_act_enviados.aspx.designer.vb">
+      <DependentUpon>rep_inv_act_enviados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rep_inv_act_enviados.aspx.vb">
+      <DependentUpon>rep_inv_act_enviados.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rep_inv_act_rechazados.aspx.designer.vb">
+      <DependentUpon>rep_inv_act_rechazados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rep_inv_act_rechazados.aspx.vb">
+      <DependentUpon>rep_inv_act_rechazados.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rep_inv_fijos.aspx.designer.vb">
+      <DependentUpon>rep_inv_fijos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rep_inv_fijos.aspx.vb">
+      <DependentUpon>rep_inv_fijos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rep_inv_internet.aspx.designer.vb">
+      <DependentUpon>rep_inv_internet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rep_inv_internet.aspx.vb">
+      <DependentUpon>rep_inv_internet.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rep_inv_legalizados.aspx.designer.vb">
+      <DependentUpon>rep_inv_legalizados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rep_inv_legalizados.aspx.vb">
+      <DependentUpon>rep_inv_legalizados.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rep_inv_moviles.aspx.designer.vb">
+      <DependentUpon>rep_inv_moviles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rep_inv_moviles.aspx.vb">
+      <DependentUpon>rep_inv_moviles.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rep_inv_telefonos.aspx.designer.vb">
+      <DependentUpon>rep_inv_telefonos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rep_inv_telefonos.aspx.vb">
+      <DependentUpon>rep_inv_telefonos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rep_inv_tv.aspx.designer.vb">
+      <DependentUpon>rep_inv_tv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rep_inv_tv.aspx.vb">
+      <DependentUpon>rep_inv_tv.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rep_subsanar.aspx.designer.vb">
+      <DependentUpon>rep_subsanar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rep_subsanar.aspx.vb">
+      <DependentUpon>rep_subsanar.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rptEquipos.aspx.designer.vb">
+      <DependentUpon>rptEquipos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptEquipos.aspx.vb">
+      <DependentUpon>rptEquipos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="score_actualizacion.aspx.designer.vb">
+      <DependentUpon>score_actualizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="score_actualizacion.aspx.vb">
+      <DependentUpon>score_actualizacion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="subsanar.aspx.designer.vb">
+      <DependentUpon>subsanar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="subsanar.aspx.vb">
+      <DependentUpon>subsanar.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="transacciones.aspx.designer.vb">
+      <DependentUpon>transacciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="transacciones.aspx.vb">
+      <DependentUpon>transacciones.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="transaccionesInternet.aspx.designer.vb">
+      <DependentUpon>transaccionesInternet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="transaccionesInternet.aspx.vb">
+      <DependentUpon>transaccionesInternet.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="cargasArchivo\data\" />
+    <Folder Include="data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54947</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54947/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

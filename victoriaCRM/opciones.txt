@@ -1,0 +1,45 @@
+<li class="treeview">
+          <a href="#">
+            <i class="fa fa-edit"></i> <span>Cuentas X Cobrar</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i> Clientes</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Ciclos de Cobro</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Facturacion</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>Activaciones</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i> Pendientes</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Cerrados</a></li>
+          </ul>
+        </li>
+
+
+<li>                                                                                                                                                                                                       <a href="#">
+            <i class="fa fa-calendar"></i> <span>Legalizar</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-red">3</small>
+              <small class="label pull-right bg-blue">17</small>
+            </span>
+          </a>
+        </li>
+        <li>
+                                                                                                                                                                                                                                <a href="#">
+            <i class="fa fa-envelope"></i> <span>Cotizaciones</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-yellow">12</small>
+              <small class="label pull-right bg-green">16</small>
+              <small class="label pull-right bg-red">5</small>
+            </span>
+          </a>
+        </li>
